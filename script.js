@@ -11,13 +11,13 @@ const vg = document.querySelector(".village");
 function userinfo(){
 
 
-    const f_n = prompt("enter your name");
-    const l_n = prompt("enter your lstname");
+    const f_n = prompt("enter your First name");
+    const l_n = prompt("enter your Last name");
     const c_nt = prompt("enter your country");
-    const ph_num = prompt("enter your phonenum");
-    const s_ty = prompt("enter your state");
-    const c_ty = prompt("enter your city");
-    const v_g = prompt("enter your village");
+    const ph_num = prompt("enter your Phone-number");
+    const s_ty = prompt("enter your State");
+    const c_ty = prompt("enter your City");
+    const v_g = prompt("enter your Village");
 
     const userinformation ={
         f_n, 
@@ -40,10 +40,10 @@ function userinfo(){
     vg.innerText = v_g;
 
     let convert = JSON.stringify(userinformation);
-    localStorage.setItem("userinformation", convert);
-    console.log(userinformation);
+    localStorage.setItem("user", convert);
+    // console.log(userinformation);
 
-    let after = JSON.parse(localStorage.getItem("userinformation"));
+    let after = JSON.parse(localStorage.getItem("user"));
     console.log(after);
 }
 
@@ -52,7 +52,7 @@ if(localStorage.length == 0){
     userinfo();
 }
 else {
-    let after = JSON.parse(localStorage.getItem("userinformation"));
+    let after = JSON.parse(localStorage.getItem("user"));
     // console.log(after);
 
     fn.innerText = after.f_n;
